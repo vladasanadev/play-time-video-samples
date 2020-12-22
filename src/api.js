@@ -6,7 +6,7 @@ import imageB from "./components/images/nature.png";
 import imageC from "./components/images/img-1000-021.png";
 import imageD from "./components/images/sport.png";
 import welcomeImage2 from "./components/images/welcomePage2.png";
-
+import lastPage from "./components/images/lastpage.png";
 export const arrayQuizData = [
   {
     type: "WELCOME_TYPE",
@@ -46,6 +46,14 @@ export const arrayQuizData = [
   {
     type: "WELCOME_TYPE",
     backGroundImage: welcomeImage2,
+    backgroundColor: "",
+    backText: "",
+    buttonColor: "",
+    buttonText: "",
+  },
+  {
+    type: "lastPage",
+    backGroundImage: lastPage,
     backgroundColor: "",
     backText: "",
     buttonColor: "",
