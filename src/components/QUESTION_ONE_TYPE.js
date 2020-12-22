@@ -40,6 +40,8 @@ const Question = styled.div`
   text-align: center;
   padding: 14%;
   font-size: 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 `;
 
 const Picture = styled.div`
@@ -49,7 +51,7 @@ const Picture = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   &:hover {
-    border: 5px solid white;
+    border: 8px solid #ff5e18;
     overflow: hidden;
     /* margin: -5px; */
   }
@@ -61,7 +63,10 @@ const Button = styled.div`
   background-color: #ff5e18;
   color: white;
   text-align: center;
-  padding: 8%;
+  padding: 12%;
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
 `;
 
 export default QUESTION_ONE_TYPE;

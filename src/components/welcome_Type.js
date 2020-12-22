@@ -1,10 +1,26 @@
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import image from "../components/images/welcomeImage.png";
 import logo from "../components/images/wunder-logo.png";
+import getNextRoute from "../getNextRoute";
 
 const WELCOME_TYPE = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const state = useSelector((state) => state);
+  const path = getNextRoute();
+  const [isUpdated, setIsUpdated] = useState(false);
+  const onClickHandler = () => {
+    dispatch({ type: "UPDATE_COUNTER" });
+    setIsUpdated(true);
+  };
+  if (isUpdated) {
+    history.push(path);
+    setIsUpdated(false);
+  }
+  console.log(state);
 
   if (!state.isReady) return <div>Loading...</div>;
 
@@ -18,7 +34,7 @@ const WELCOME_TYPE = () => {
         <img src={logo} className="logo"></img>
         <h1>Find out what products you really want and will love </h1>
       </Wrapper>
-      <Button>START THE QUIZ</Button>
+      <Button onClick={onClickHandler}>START THE QUIZ</Button>
     </MainWrapper>
   );
 };
@@ -61,7 +77,7 @@ const Button = styled.div`
   background-color: #081e71;
   color: #57a7d4;
   text-align: center;
-  padding: 8%;
+  padding: 12%;
 `;
 
 export default WELCOME_TYPE;

@@ -5,7 +5,7 @@ const initialState = {
   backText: "",
   buttonColor: "",
   buttonText: "",
-  currentCounter: 1,
+  currentCounter: 0,
   isReady: false,
 };
 
@@ -32,7 +32,7 @@ const mainReducer = (state = initialState, action) => {
       return {
         ...state,
         currentCounter:
-          state.arrayQuizData.length < state.currentCounter
+          state.arrayQuizData.length > state.currentCounter
             ? state.currentCounter + 1
             : state.currentCounter,
       };
