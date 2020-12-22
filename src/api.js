@@ -5,6 +5,7 @@ import imageA from "./components/images/tech.png";
 import imageB from "./components/images/nature.png";
 import imageC from "./components/images/img-1000-021.png";
 import imageD from "./components/images/sport.png";
+import welcomeImage2 from "./components/images/welcomePage2.png";
 
 export const arrayQuizData = [
   {
@@ -43,8 +44,8 @@ export const arrayQuizData = [
     buttonText: "",
   },
   {
-    type: "QUESTION_TWO_TYPE",
-    backGroundImage: "",
+    type: "WELCOME_TYPE",
+    backGroundImage: welcomeImage2,
     backgroundColor: "",
     backText: "",
     buttonColor: "",

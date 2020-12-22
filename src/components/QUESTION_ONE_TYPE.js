@@ -69,7 +69,7 @@ const Picture = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   &:hover {
-    border: 8px solid #ff5e18;
+    border: 11px solid #ff5e18;
     overflow: hidden;
     /* margin: -5px; */
   }
