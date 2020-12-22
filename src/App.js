@@ -33,6 +33,11 @@ function App() {
         path={QUESTION_ONE_TYPE_PATH}
         component={QUESTION_ONE_TYPE}
       />
+      <Route
+        exact
+        path={QUESTION_ONE_TYPE_PATH}
+        component={QUESTION_ONE_TYPE}
+      />
     </div>
   );
 }

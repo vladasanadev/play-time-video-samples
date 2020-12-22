@@ -9,8 +9,9 @@ import getNextRoute from "../getNextRoute";
 const WELCOME_TYPE = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const state = useSelector((state) => state);
   const path = getNextRoute();
+  const state = useSelector((state) => state);
+
   const [isUpdated, setIsUpdated] = useState(false);
   const onClickHandler = () => {
     dispatch({ type: "UPDATE_COUNTER" });
@@ -78,6 +79,9 @@ const Button = styled.div`
   color: #57a7d4;
   text-align: center;
   padding: 12%;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Inter";
 `;
 
 export default WELCOME_TYPE;

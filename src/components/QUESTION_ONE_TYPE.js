@@ -1,9 +1,27 @@
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import getNextRoute from "../getNextRoute";
 
 const QUESTION_ONE_TYPE = () => {
   const state = useSelector((state) => state);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const path = getNextRoute();
+
+  const [isUpdated, setIsUpdated] = useState(false);
+  const onClickHandler = () => {
+    dispatch({ type: "UPDATE_COUNTER" });
+    setIsUpdated(true);
+  };
+  if (isUpdated) {
+    history.push(path);
+    setIsUpdated(false);
+  }
+
   if (!state.isReady) return <div>Loading...</div>;
+
   return (
     <Wrapper>
       <Question>How do you like to have your ice-cream? </Question>
@@ -17,7 +35,7 @@ const QUESTION_ONE_TYPE = () => {
           state.arrayQuizData[state.currentCounter].backGroundImage2
         }
       ></Picture>
-      <Button>SEND ANSWER</Button>
+      <Button onClick={onClickHandler}>SEND ANSWER</Button>
     </Wrapper>
   );
 };
